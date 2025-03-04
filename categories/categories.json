@@ -1,0 +1,11 @@
+[
+    {
+        "id": "games-and-ai-simulation",
+        "title": "Games and AI Simulations",
+        "Description": "Build games and simulate them using AI",
+        "items": [
+            "sudoku-ai"
+          ]
+          
+    }
+]
