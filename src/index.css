@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
+
+/* General Resets */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+code {
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Make the body a flex container */
+  min-height: 100vh; /* Ensure it spans the full viewport height */
+  margin: 0;
+}
+
+/* Header Styling */
+header {
+  background-color: #0a0a0a; /* Elegant black */
+  color: white;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Title / Logo Styling */
+header h1 {
+  font-family: 'Comfortaa';
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  cursor: pointer;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: white; /* Default color */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-tabs a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+.nav-tabs a:hover {
+  background-color: rgba(163, 169, 255, 0.1); /* Space light glow background */
+  box-shadow: 0px 0px 8px rgba(163, 169, 255, 0.8); /* Glowing border */
+  color: #a3a9ff; /* Space light blue text */
+}
+
+
+
+footer {
+  background-color: #0a0a0a; /* Elegant black */
+  color: white;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1); /* Subtle top shadow */
+}
+
+/* Main Layout */
+main {
+  flex: 1; /* Allow the main content to expand and take up available space */
+  display: flex;
+  justify-content: center; /* Center the main content horizontally */
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Left Ad Placeholder Styling */
+.left-ad {
+  width: 15%; /* 1/6 of the width */
+  min-height: 300px;
+  background-color: #e5e7eb; /* Light gray */
+  border: 1px dashed #ccc; /* Dashed border for visibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  display: none;
+}
+
+/* Right Ad Placeholder Styling */
+.right-ad {
+  width: 16.6667%; /* 1/6 of the width */
+  min-height: 300px;
+  background-color: #e5e7eb;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  display: none;
+}
+
+/* Content Box */
+.content-box {
+  width: 70%;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Default center alignment for the main title */
+}
+
+/* Align Other Headings and Content to the Left */
+.content-box h1,
+.content-box h2, 
+.content-box h3, 
+.content-box p, 
+.content-box pre, 
+.content-box code {
+  text-align: left;
+  margin-top: 1rem;
+  margin-left: 0; 
+}
+
+/* Additional Styling for Headings (Optional) */
+.content-box h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 1.5rem; /* Add extra spacing above h2 */
+}
+
+.content-box h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1.25rem;
+}
+
+
+/* Code Block Wrapper */
+.code-block-wrapper {
+  position: relative;
+}
+
+/* Copy Button Styling */
+.copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover Effect */
+.copy-button:hover {
+  background-color: #555; /* Lighter background */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Copied Animation */
+.copy-button.copied {
+  background-color: #4caf50; /* Green background for Copied! */
+  color: white;
+  transform: scale(1.1); /* Slightly enlarge the button */
+  font-weight: bold;
+  transition: all 0.3s ease; /* Smooth animation */
+}
+
+.markdown-content img {
+  width: 50%;          /* Ensures full responsiveness */
+  max-width: 50vw;     /* Prevents images from becoming too large */
+  height: auto;         /* Maintains aspect ratio */
+  display: block;       /* Ensures proper layout */
+  margin: 0 auto;       /* Centers the image */
+  border-radius: 8px;   /* Optional: Adds rounded corners */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .left-ad, .right-ad {
+    display: none; /* Hide ads on smaller screens */
+  }
+
+  .content-box {
+    max-width: 90%; /* Expand content width on smaller screens */
+  }
+}
+
+/* Home Container */
+.home-container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0.5rem; /* Reduced padding for compact layout */
+  font-family: Arial, sans-serif;
+}
+
+/* Title Styling */
+.home-title {
+  font-size: 1.875rem; /* 3xl */
+  font-weight: bold;
+  margin-bottom: 1.5rem; /* Add spacing below the title */
+}
+
+/* Article List */
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Reduced gap between cards */
+}
+
+/* Article Card */
+.article-card {
+  display: block;
+  width: 100%; /* Slightly narrower for compact feel */
+  max-width: 100%;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 0.3rem; 
+  padding: 0.50rem; /* Reduced padding for a tighter design */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 0 auto; /* Center-align the cards */
+}
+
+.article-card:hover {
+  border-color: #555;
+  background-color: rgba(163, 169, 255, 0.1);
+  transform: translateY(-2px); /* Subtle lift */
+  box-shadow: 0px 3px 8px rgba(163, 169, 255, 0.2); /* Reduced shadow for compact look */
+}
+
+/* Article Title */
+.article-title {
+  font-size: 1rem; /* Reduced font size */
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+}
+
+/* Article Subtitle */
+.article-subtitle {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.0rem; /* Tighter spacing below the title */
+}
+
+/* Learn Code Container */
+.learn-code-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  width: 100%;
+  padding: 2rem;
+}
+
+/* Category Grid */
+.category-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping if needed */
+  justify-content: center; /* Center horizontally */
+  gap: 2rem; /* Space between cards */
+  max-width: 80%; /* Adjust width for a balanced layout */
+}
+
+.article-card h3,
+.article-card p {
+  padding-left: 1rem;
+}
+
+/* Category Card */
+.category-card {
+  width: 320px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none; /* Remove default link underline */
+  color: black; /* Set text color to black */
+  font-weight: normal;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-card:hover {
+  border-color: #555;
+  background-color: rgba(163, 169, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 10px rgba(163, 169, 255, 0.2);
+}
+
+
+/* Back Button */
+.back-button {
+  cursor: pointer;
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.back-button:hover {
+  color: black;
+}
+
+.category-articles-container {
+  max-width: 80%;
+  margin: 2rem auto;
+  text-align: center;
+}
+.category-articles-container h2 {
+  padding-left: 0.5rem; 
+}
+
+ol, ul {
+  text-align: left; /* Aligns lists to the left */
+  padding-left: 1.5rem; /* Ensures bullet points are properly spaced */
+}
+
+/* Ensure list items are aligned properly */
+li {
+  text-align: left; /* Aligns list items */
+  display: list-item; /* Ensures correct bullet point structure */
+}
+
+
+/* Center About Page Content */
+.about-container {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  height: 80vh;            /* Takes up most of the screen */
+  text-align: center;       /* Ensures text alignment */
+  font-size: 24px;          /* Bigger font size */
+  font-weight: bold;        /* Makes the text stand out */
+}
+
+

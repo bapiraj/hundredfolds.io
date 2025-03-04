@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="100" fill="black" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700');
+    </style>
+    <text x="50%" y="55%" font-size="100" font-family="Comfortaa, sans-serif" font-weight="bold"
+          fill="white" text-anchor="middle" alignment-baseline="middle">
+        hf
+    </text>
+</svg>

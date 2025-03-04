@@ -1,0 +1,113 @@
+/* -------------------- General Styles -------------------- */
+.sudoku-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* -------------------- Sudoku Grid -------------------- */
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 2px;
+  margin: 20px 0;
+  padding: 10px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: 3px solid black;
+  max-width: 100%;
+}
+
+/* -------------------- Individual Sudoku Cells -------------------- */
+.sudoku-grid input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: white;
+  outline: none;
+  transition: background-color 0.2s ease-in-out;
+  /* caret-color: transparent; */
+  box-sizing: border-box;
+}
+
+/* ✅ Ensures the grid does NOT shift when focusing */
+.sudoku-grid input:focus {
+  background-color: rgba(173, 216, 230, 0.5); /* Light blue highlight */
+  border: 1px solid #007bff; /* ✅ Keep the same border size */
+}
+
+/* -------------------- Preset and Conflict Styles -------------------- */
+
+/* Conflicts - User input errors (Red) */
+.sudoku-grid input.conflict {
+  background-color: #ffcccc;
+  border: 2px solid red;
+}
+
+/* Conflicts - Preset numbers conflicting (Orange) */
+.sudoku-grid input.preset.conflict {
+  background-color: #ffeb99;
+  border: 2px solid orange;
+}
+
+
+.sudoku-grid input.preset {
+  background-color: #e0e0e0;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+/* AI-Selected Cells (Yellow Highlight) */
+.sudoku-grid input.ai-selected {
+  background-color: rgba(173, 216, 230, 0.5); /* Light blue highlight */
+  border: 1px solid #007bff; /* ✅ Keep the same border size */
+}
+
+/* -------------------- Thicker Borders for 3x3 Boxes -------------------- */
+.sudoku-grid input:nth-child(3n) {
+  border-right: 3px solid black;
+}
+
+.sudoku-grid input:nth-child(9n+1) {
+  border-left: 3px solid black;
+}
+
+.sudoku-grid input:nth-child(n+19):nth-child(-n+27),
+.sudoku-grid input:nth-child(n+46):nth-child(-n+54),
+.sudoku-grid input:nth-child(n+73):nth-child(-n+81) {
+  border-bottom: 3px solid black;
+}
+
+.sudoku-grid input:nth-child(-n+9) {
+  border-top: 3px solid black;
+}
+
+/* -------------------- Buttons -------------------- */
+.sudoku-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.sudoku-buttons button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  background-color: #0a0a0a;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sudoku-buttons button:hover {
+  background-color: #444;
+}
